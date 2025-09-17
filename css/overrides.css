@@ -1,0 +1,121 @@
+/* Estilo base para TODOS los mermaid-custom renderizados por nuestro JS */
+.mermaid-custom-rendered svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  background: var(--merm-bg);
+  font-family: inherit;
+}
+
+/* Variables para esquema claro */
+:root {
+  --merm-bg: transparent;
+  --merm-primary: #e53935;        /* rojo IBERO-ish */
+  --merm-edge: #b71c1c;
+  --merm-text: #222;
+  --merm-node-fill: #fff7f7;
+  --merm-node-stroke: #e53935;
+  --merm-font-size: 16px;
+}
+
+/* Variables para esquema oscuro (Material usa data-md-color-scheme) */
+html[data-md-color-scheme="slate"] {
+  --merm-bg: transparent;
+  --merm-primary: #ff8a80;
+  --merm-edge: #ff5252;
+  --merm-text: #eee;
+  --merm-node-fill: #2b2b2b;
+  --merm-node-stroke: #ff8a80;
+  --merm-font-size: 16px;
+}
+
+/* Ajustes finos por selectores de Mermaid (si quieres forzar algo) */
+.mermaid-custom-rendered .node rect,
+.mermaid-custom-rendered .node circle,
+.mermaid-custom-rendered .node ellipse {
+  fill: var(--merm-node-fill) !important;
+  stroke: var(--merm-node-stroke) !important;
+  stroke-width: 1.5px !important;
+}
+
+.mermaid-custom-rendered .edgePath path {
+  stroke: var(--merm-edge) !important;
+}
+
+.mermaid-custom-rendered .label, 
+.mermaid-custom-rendered text {
+  fill: var(--merm-text) !important;
+  font-size: var(--merm-font-size) !important;
+}
+/* Mindmap: asegúrate de que los enlaces (líneas) sí se vean */
+.mermaid .link,
+.mermaid .edgePath path,
+.mermaid g[class*="edge"] path,
+.mermaid path.mindmap-link {
+  stroke: var(--md-default-fg-color, #444) !important;
+  stroke-opacity: 0.7 !important;
+  stroke-width: 1.6px !important;
+  fill: none !important; /* clave para que no “rellene” el path */
+}
+
+/* Opcional: bordes de nodos un poco más visibles */
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse {
+  stroke: var(--md-default-fg-color, #444) !important;
+  stroke-opacity: 0.9 !important;
+  stroke-width: 1.2px !important;
+}
+/* --- SOLO mindmap renderizado por nuestro JS --- */
+.mermaid-custom-rendered svg g[class*="mindmap"] path[fill="none"],
+.mermaid-custom-rendered svg g[class*="mindmap"] path[stroke="none"],
+.mermaid-custom-rendered svg g[class*="mindmap"] path:not([stroke]) {
+  stroke: var(--merm-edge, #555) !important;
+  stroke-width: 1.8px !important;
+  fill: none !important;
+  opacity: 1 !important;
+}
+
+/* Por si los nodos del mindmap vienen sin borde visible */
+.mermaid-custom-rendered svg g[class*="mindmap"] .node rect,
+.mermaid-custom-rendered svg g[class*="mindmap"] .node circle,
+.mermaid-custom-rendered svg g[class*="mindmap"] .node ellipse {
+  stroke: var(--merm-node-stroke, #888) !important;
+  stroke-width: 1.2px !important;
+  fill: var(--merm-node-fill, #fff) !important;
+}
+
+/* Texto del mindmap */
+.mermaid-custom-rendered svg g[class*="mindmap"] text,
+.mermaid-custom-rendered svg g[class*="mindmap"] .label {
+  fill: var(--merm-text, #222) !important;
+}
+/* Forzar trazo de ramas en mindmap renderizado por nuestro JS */
+.mermaid-custom-rendered path.edge,
+.mermaid-custom-rendered path.edge-pattern-solid,
+.mermaid-custom-rendered path.edge-thickness-normal,
+.mermaid-custom-rendered g[class*="mindmap"] path.edge,
+.mermaid-custom-rendered g[class*="mindmap"] path[id^="edge_"] {
+  stroke: var(--merm-edge, #555) !important;
+  stroke-width: 1.8px !important;
+  stroke-opacity: 1 !important;
+  fill: none !important;
+  opacity: 1 !important;
+}
+
+/* Por si el marcador de flecha (si lo hubiera) no hereda el color */
+.mermaid-custom-rendered marker path,
+.mermaid-custom-rendered marker polygon {
+  stroke: var(--merm-edge, #555) !important;
+  fill: var(--merm-edge, #555) !important;
+  opacity: 1 !important;
+}
+
+/* Bordes de nodos del mindmap (opcional) */
+.mermaid-custom-rendered g[class*="mindmap"] .node rect,
+.mermaid-custom-rendered g[class*="mindmap"] .node circle,
+.mermaid-custom-rendered g[class*="mindmap"] .node ellipse {
+  stroke: var(--merm-node-stroke, #888) !important;
+  stroke-width: 1.2px !important;
+  fill: var(--merm-node-fill, #fff) !important;
+}
