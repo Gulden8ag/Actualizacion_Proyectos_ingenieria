@@ -48,6 +48,4 @@ extra_css:
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js
   - js/mermaid-custom.js
-plugins:
-  - markmap
 
