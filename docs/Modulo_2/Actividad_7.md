@@ -14,10 +14,23 @@ Esta pregunta es específica, medible y se ajusta a los datos que puedo obtener 
 
 La siguiente tabla reúne las variables que considero más importantes para mi investigación. Incluyo variables de identificación (simulación, seed, hash), independientes (RTK, control, LiDAR, cámara, trayectoria) y dependientes (error, estabilidad, percepción, tiempos).
 
-| ID Simulación | Trayectoria (bloque) | Ruido RTK (cm) | Estrategia de control | Resolución LiDAR | Cámara (res/FOV) | Error medio (cm) | RMSE (cm) | P95 (cm) | Sobreimpulso (%) | Frec. oscilación (Hz) | Tiempo (min/ha) | FPR (%) | FNR (%) | Seed corrida | Hash commit |
-|---------------|-----------------------|----------------|-----------------------|------------------|------------------|------------------|-----------|----------|------------------|-----------------------|-----------------|---------|---------|--------------|-------------|
-| Sim_01        | Recta                 | 0.5            | PID                   | 0.5°             | 640×480 @ 60°    | 2.5              | 3.1       | 4.8      | 8                | 0.15                  | 12.1            | 4       | 3       | 12345        | abc123      |
-| Sim_02        | Curva en “S”          | 2.0            | LQR                   | 0.25°            | 1280×720 @ 90°   | …                | …         | …        | …                | …                     | …               | …       | …       | …            | …           |
+| Variable                | Sim_01                     | Sim_02                     |
+|-------------------------|----------------------------|----------------------------|
+| Trayectoria (bloque)    | Recta                      | Curva en “S”               |
+| Ruido RTK (cm)          | 0.5                        | 2.0                        |
+| Estrategia de control   | PID                        | LQR                        |
+| Resolución LiDAR        | 0.5°                       | 0.25°                      |
+| Cámara (res/FOV)        | 640×480 @ 60°              | 1280×720 @ 90°             |
+| Error medio (cm)        | 2.5                        | …                          |
+| RMSE (cm)               | 3.1                        | …                          |
+| P95 (cm)                | 4.8                        | …                          |
+| Sobreimpulso (%)        | 8                          | …                          |
+| Frec. oscilación (Hz)   | 0.15                       | …                          |
+| Tiempo (min/ha)         | 12.1                       | …                          |
+| FPR (%)                 | 4                          | …                          |
+| FNR (%)                 | 3                          | …                          |
+| Seed corrida            | 12345                      | …                          |
+| Hash commit             | abc123                     | …                          |
 
 ---
 
