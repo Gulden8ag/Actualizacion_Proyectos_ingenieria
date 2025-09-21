@@ -11,9 +11,6 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-        - name: mermaid-custom
-          class: mermaid-custom
-          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.critic:
       mode: view
   - pymdownx.caret
@@ -44,8 +41,5 @@ theme:
 extra_css:
   - https://use.fontawesome.com/releases/v6.5.2/css/all.css
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css
-  - css/overrides.css
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js
-  - js/mermaid-custom.js
-
